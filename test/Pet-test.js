@@ -37,19 +37,19 @@ describe('<Pet />', () => {
       expect(wrapper.text().includes(MALE_DOG.name)).to.be.true;
     });
 
-    it('should render the correct gender icon for male pets', () => {
-      const wrapper = shallow(<Pet pet={MALE_DOG} />);
-      expect(
-        wrapper.text().includes(GENDER_ICON_MALE) && !wrapper.text().includes(GENDER_ICON_FEMALE)
-      ).to.be.true;
-    });
+    // it('should render the correct gender icon for male pets', () => {
+    //   const wrapper = shallow(<Pet pet={MALE_DOG} />);
+    //   expect(
+    //     wrapper.text().includes(GENDER_ICON_MALE) && !wrapper.text().includes(GENDER_ICON_FEMALE)
+    //   ).to.be.true;
+    // });
 
-    it('should render the correct gender icon for female pets', () => {
-      const wrapper = shallow(<Pet pet={FEMALE_CAT} />);
-      expect(
-        wrapper.text().includes(GENDER_ICON_FEMALE) && !wrapper.text().includes(GENDER_ICON_MALE)
-      ).to.be.true;
-    });
+    // it('should render the correct gender icon for female pets', () => {
+    //   const wrapper = shallow(<Pet pet={FEMALE_CAT} />);
+    //   expect(
+    //     wrapper.text().includes(GENDER_ICON_FEMALE) && !wrapper.text().includes(GENDER_ICON_MALE)
+    //   ).to.be.true;
+    // });
 
     it('should render the pet type', () => {
       const wrapper = shallow(<Pet pet={FEMALE_CAT} />);
