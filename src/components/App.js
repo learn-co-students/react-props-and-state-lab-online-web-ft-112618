@@ -22,8 +22,11 @@ class App extends React.Component {
     })
   }
 
-  onFindPetsClick = () => {
-
+  onFindPetsClick = ({ target: { value } }) => {
+      this.setState({
+        filters: {
+          ...this.state.filters, type: value }
+    })
   }
 
   render() {
