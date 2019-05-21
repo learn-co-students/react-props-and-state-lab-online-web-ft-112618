@@ -22,12 +22,17 @@ class App extends React.Component {
     })
   }
 
-  onFindPetsClick = ({ target: { value } }) => {
-      this.setState({
-        filters: {
-          ...this.state.filters, type: value }
-    })
-  }
+  fetchPets = () => {
+    let endpoint = '/api/pets';
+
+    if (this.state.filters.type !== 'all') {
+      endpoint += `?type=${this.state.filters.type}`;
+    }
+
+    fetch(endpoint)
+      .then(res => res.json())
+      .then(pets => this.setState({ pets }));
+  };
 
   render() {
     return (
